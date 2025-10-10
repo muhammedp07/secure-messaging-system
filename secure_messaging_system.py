@@ -1,4 +1,4 @@
-# Part A: AES Encruption
+# Part A: AES Encryption
 from Crypto.Cipher import AES
 
 # Given Parameters
@@ -19,3 +19,11 @@ ciphertext = cipher.encrypt(pkcs7_pad(MESSAGE))
 
 decipher = AES.new(AES_Key, AES.MODE_CBC, IV)
 plaintext = pkcs7_unpad(decipher.decrypt(ciphertext))
+
+'''
+Q2. Why is it insecure to reuse the same AES key and IV for multiple messages? (Theory)
+
+ANS. CBC encryption is deterministic. if we encrypt the same plaintext with same AES key and IV,
+we get the exact same ciphertext. Attackers can notice patterns, compare messages, and start guessing contents.
+Therefore, Always use a new random IV for each message.
+'''
