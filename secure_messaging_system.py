@@ -27,3 +27,8 @@ ANS. CBC encryption is deterministic. if we encrypt the same plaintext with same
 we get the exact same ciphertext. Attackers can notice patterns, compare messages, and start guessing contents.
 Therefore, Always use a new random IV for each message.
 '''
+
+# Part B: RSA Encryption
+n = 521_895_036_569
+e = 65_537
+d = 140_513_163_173
